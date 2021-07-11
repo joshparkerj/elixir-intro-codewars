@@ -25,14 +25,6 @@ defmodule Codewars do
   end
 
   def solution(number) do
-    multipleOfThree = rem(number - 1, 3) == 0
-    multipleOfFive = rem(number - 1, 5) == 0
-    eitherOne = multipleOfThree or multipleOfFive
-
-    if eitherOne do
-      number + solution(number - 1) - 1
-    else
-      solution(number - 1)
-    end
+    Enum.sum(Enum.filter(1..number-1, fn x -> rem(x, 3) == 0 or rem(x, 5) == 0 end))
   end
 end
