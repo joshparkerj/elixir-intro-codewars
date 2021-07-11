@@ -27,4 +27,8 @@ defmodule Codewars do
   def solution(number) do
     Enum.sum(Enum.filter(1..number-1, fn x -> rem(x, 3) == 0 or rem(x, 5) == 0 end))
   end
+
+  def get_count(str) do
+    String.length(Regex.replace(~r/[^aeiou]/i, str, ""))
+  end
 end
