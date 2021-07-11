@@ -9,4 +9,16 @@ defmodule CodewarsTest do
   test "multiplies" do
     assert Codewars.multiply(2, 3) == 6
   end
+
+  test "multiples of 3 or 5 less than 3" do
+    assert Codewars.solution(2) == 0
+  end
+
+  test "multiples of 3 or 5 first two" do
+    assert Codewars.solution(6) == 8
+  end
+
+  test "multiples of 3 or 5 first four" do
+    assert Codewars.solution(10) == 23
+  end
 end
