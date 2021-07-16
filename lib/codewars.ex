@@ -63,9 +63,13 @@ defmodule Codewars do
   Get the Middle Character
   """
   def get_middle(str) do
-    str_len = String.length(str)
-    start = div(str_len, 2) - 1 + rem(str_len,2)
-    slice_len = 2 - rem(str_len, 2)
-    String.slice(str, start, slice_len)
+    str_length = String.length(str)
+    require Integer
+
+    if Integer.is_even(str_length) do
+      String.slice(str, div(str_length, 2) - 1, 2)
+    else
+      String.slice(str, div(str_length, 2), 1)
+    end
   end
 end
