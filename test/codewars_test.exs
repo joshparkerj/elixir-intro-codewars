@@ -53,4 +53,24 @@ defmodule CodewarsTest do
   test "remove vowels from the sentence" do
     assert Codewars.disemvowel("thanks fOr the mEmorIes") == "thnks fr th mmrs"
   end
+
+  test "middle of empty string" do
+    assert Codewars.get_middle("") == ""
+  end
+
+  test "middle of string size one" do
+    assert Codewars.get_middle("a") == "a"
+  end
+
+  test "middle of string size two" do
+    assert Codewars.get_middle("ab") == "ab"
+  end
+
+  test "middle of string size three" do
+    assert Codewars.get_middle("abc") == "b"
+  end
+
+  test "middle of string size four" do
+    assert Codewars.get_middle("abcd") == "bc"
+  end
 end

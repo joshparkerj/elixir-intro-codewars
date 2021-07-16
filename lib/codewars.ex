@@ -58,4 +58,14 @@ defmodule Codewars do
   def disemvowel(s) do
     Regex.replace(~r/[aeiou]/i, s, "")
   end
+
+  @doc """
+  Get the Middle Character
+  """
+  def get_middle(str) do
+    str_len = String.length(str)
+    start = div(str_len, 2) - 1 + rem(str_len,2)
+    slice_len = 2 - rem(str_len, 2)
+    String.slice(str, start, slice_len)
+  end
 end
