@@ -51,4 +51,11 @@ defmodule Codewars do
   def find(list) do
     Enum.reduce(list, &Bitwise.bxor/2)
   end
+
+  @doc """
+  Disemvowel trolls
+  """
+  def disemvowel(s) do
+    Regex.replace(~r/[aeiou]/i, s, "")
+  end
 end

@@ -49,4 +49,8 @@ defmodule CodewarsTest do
   test "odd one out paired once" do
     assert Codewars.find([1,2,3,4,5,6,1,2,3,4,5,6,6]) == 6
   end
+
+  test "remove vowels from the sentence" do
+    assert Codewars.disemvowel("thanks fOr the mEmorIes") == "thnks fr th mmrs"
+  end
 end
