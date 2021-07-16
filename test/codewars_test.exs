@@ -41,4 +41,12 @@ defmodule CodewarsTest do
   test "odd number" do
     assert Codewars.even_or_odd(3) == "Odd"
   end
+
+  test "which is the odd one out (unpaired integer)" do
+    assert Codewars.find([1,2,3,4,5,6,1,2,3,4,5]) == 6
+  end
+
+  test "odd one out paired once" do
+    assert Codewars.find([1,2,3,4,5,6,1,2,3,4,5,6,6]) == 6
+  end
 end

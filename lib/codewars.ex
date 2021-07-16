@@ -29,9 +29,9 @@ defmodule Codewars do
   end
 
   def get_count(str) do
-    String.downcase(str) |>
-    String.codepoints() |>
-    Enum.reduce(0, fn
+    String.downcase(str)
+    |> String.codepoints()
+    |> Enum.reduce(0, fn
       e, acc when e in ~w(a e i o u) -> acc + 1
       _e, acc -> acc
     end)
@@ -43,5 +43,12 @@ defmodule Codewars do
     else
       "Odd"
     end
+  end
+
+  @doc """
+  Find the odd int
+  """
+  def find(list) do
+    Enum.reduce(list, &Bitwise.bxor/2)
   end
 end
