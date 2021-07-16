@@ -29,10 +29,10 @@ defmodule Codewars do
   end
 
   def get_count(str) do
-    # note: unlike in JavaScript, this enum reduce function takes the element first, then the accumulator
-    # e, acc instead of acc, e
-    Enum.reduce(String.codepoints(String.downcase(str)), 0, fn
-      e, acc when e in ["a", "e", "i", "o", "u"] -> acc + 1
+    String.downcase(str) |>
+    String.codepoints() |>
+    Enum.reduce(0, fn
+      e, acc when e in ~w(a e i o u) -> acc + 1
       _e, acc -> acc
     end)
   end
