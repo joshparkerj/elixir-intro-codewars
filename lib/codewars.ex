@@ -25,10 +25,23 @@ defmodule Codewars do
   end
 
   def solution(number) do
-    Enum.sum(Enum.filter(1..number-1, fn x -> rem(x, 3) == 0 or rem(x, 5) == 0 end))
+    Enum.sum(Enum.filter(1..(number - 1), fn x -> rem(x, 3) == 0 or rem(x, 5) == 0 end))
   end
 
   def get_count(str) do
-    String.length(Regex.replace(~r/[^aeiou]/i, str, ""))
+    # note: unlike in JavaScript, this enum reduce function takes the element first, then the accumulator
+    # e, acc instead of acc, e
+    Enum.reduce(String.codepoints(String.downcase(str)), 0, fn
+      e, acc when e in ["a", "e", "i", "o", "u"] -> acc + 1
+      _e, acc -> acc
+    end)
+  end
+
+  def even_or_odd(number) do
+    if rem(number, 2) == 0 do
+      "Even"
+    else
+      "Odd"
+    end
   end
 end

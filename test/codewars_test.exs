@@ -29,4 +29,16 @@ defmodule CodewarsTest do
   test "get count with capital letters" do
     assert Codewars.get_count("ElIxIr rOcks") == 4
   end
+
+  test "get count with no vowels" do
+    assert Codewars.get_count("thnks fr th mmrs") == 0
+  end
+
+  test "even number" do
+    assert Codewars.even_or_odd(2) == "Even"
+  end
+
+  test "odd number" do
+    assert Codewars.even_or_odd(3) == "Odd"
+  end
 end
