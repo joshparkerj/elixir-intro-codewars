@@ -16,10 +16,18 @@ defmodule Codewars do
     :world
   end
 
+  @doc """
+  1
+  Multiply
+  """
   def multiply(a, b) do
     a * b
   end
 
+  @doc """
+  2
+  Multiples of 3 or 5
+  """
   def solution(number) when number <= 2 do
     0
   end
@@ -28,6 +36,10 @@ defmodule Codewars do
     Enum.sum(Enum.filter(1..(number - 1), fn x -> rem(x, 3) == 0 or rem(x, 5) == 0 end))
   end
 
+  @doc """
+  3
+  Vowel count
+  """
   def get_count(str) do
     String.downcase(str)
     |> String.codepoints()
@@ -37,6 +49,10 @@ defmodule Codewars do
     end)
   end
 
+  @doc """
+  4
+  Even or Odd
+  """
   def even_or_odd(number) do
     if rem(number, 2) == 0 do
       "Even"
@@ -46,6 +62,7 @@ defmodule Codewars do
   end
 
   @doc """
+  5
   Find the odd int
   """
   def find(list) do
@@ -53,6 +70,7 @@ defmodule Codewars do
   end
 
   @doc """
+  6
   Disemvowel trolls
   """
   def disemvowel(s) do
@@ -60,6 +78,7 @@ defmodule Codewars do
   end
 
   @doc """
+  7
   Get the Middle Character
   """
   def get_middle(str) do
@@ -74,6 +93,7 @@ defmodule Codewars do
   end
 
   @doc """
+  8
   Sum of Digits / Digital Root
   """
   # TODO: try solving this using Enum.sum
@@ -81,6 +101,7 @@ defmodule Codewars do
   def digital_root(n), do: (digital_root(div(n, 10)) + rem(n, 10)) |> digital_root()
 
   @doc """
+  9
   Opposite number
   """
   def opposite(number) do
@@ -88,6 +109,7 @@ defmodule Codewars do
   end
 
   @doc """
+  10
   Highest and Lowest
   """
   # TODO: try solving this using Enum.min_max
@@ -109,6 +131,7 @@ defmodule Codewars do
   end
 
   @doc """
+  11
   You're a square!
   """
   # TODO: try solving this using :math.sqrt
@@ -123,6 +146,7 @@ defmodule Codewars do
   end
 
   @doc """
+  12
   Stop gninnipS My sdroW!
   """
   # TODO: try solving this using Regex.replace with replacement function
@@ -140,6 +164,7 @@ defmodule Codewars do
   end
 
   @doc """
+  13
   Descending Order
   """
   # TODO: try solving this using Integer.undigits
@@ -151,4 +176,20 @@ defmodule Codewars do
       |> Enum.sort()
       |> Enum.reverse()
       |> Enum.reduce(fn e, acc -> 10 * acc + e end)
+
+  @doc """
+  14
+  Mumbling
+  """
+  # TODO: try solving it destructuring the element in the signature of the map function
+  def accum(s) do
+    String.graphemes(s)
+    |> Enum.with_index()
+    |> Enum.map_join("-", fn e ->
+      {c, i} = e
+
+      String.duplicate(c, i + 1)
+      |> String.capitalize()
+    end)
+  end
 end

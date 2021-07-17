@@ -123,4 +123,8 @@ defmodule CodewarsTest do
   test "descending order nine digits" do
     assert Codewars.descending_order(123456789) == 987654321
   end
+
+  test "mumbling" do
+    assert Codewars.accum("RqaEzty") == "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+  end
 end
