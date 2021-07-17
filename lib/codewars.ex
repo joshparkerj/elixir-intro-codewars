@@ -72,4 +72,11 @@ defmodule Codewars do
       String.slice(str, div(str_length, 2), 1)
     end
   end
+
+  @doc """
+  Sum of Digits / Digital Root
+  """
+  # TODO: try solving this using Enum.sum
+  def digital_root(n) when n < 10, do: n
+  def digital_root(n), do: (digital_root(div(n, 10)) + rem(n, 10)) |> digital_root()
 end

@@ -73,4 +73,18 @@ defmodule CodewarsTest do
   test "middle of string size four" do
     assert Codewars.get_middle("abcd") == "bc"
   end
+
+  test "digital root 2 digits" do
+    assert Codewars.digital_root(12) == 3
+    assert Codewars.digital_root(16) == 7
+  end
+
+  test "digital root 3 digits" do
+    assert Codewars.digital_root(678) == 3
+    assert Codewars.digital_root(456) == 6
+  end
+
+  test "digital root 4 digits" do
+    assert Codewars.digital_root(2345) == 5
+  end
 end
