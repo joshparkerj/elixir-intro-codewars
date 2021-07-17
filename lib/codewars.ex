@@ -90,7 +90,7 @@ defmodule Codewars do
   @doc """
   Highest and Lowest
   """
-  #TODO: try solving this using Enum.min_max
+  # TODO: try solving this using Enum.min_max
   def high_and_low(s) do
     nums = String.split(s) |> Enum.map(&String.to_integer/1)
 
@@ -106,5 +106,35 @@ defmodule Codewars do
       end)
 
     "#{high_low.high} #{high_low.low}"
+  end
+
+  @doc """
+  You're a square!
+  """
+  # TODO: try solving this using :math.sqrt
+  def square?(n, root \\ 0) do
+    target = root * root
+
+    cond do
+      target == n -> true
+      target > n -> false
+      true -> square?(n, root + 1)
+    end
+  end
+
+  @doc """
+  Stop gninnipS My sdroW!
+  """
+  # TODO: try solving this using Regex.replace with replacement function
+  def spin_words(message) do
+    String.split(message)
+    |> Enum.map(fn word ->
+      if String.length(word) > 4 do
+        String.reverse(word)
+      else
+        word
+      end
+    end)
+    |> Enum.join(" ")
   end
 end

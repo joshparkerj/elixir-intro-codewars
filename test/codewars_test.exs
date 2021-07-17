@@ -43,11 +43,11 @@ defmodule CodewarsTest do
   end
 
   test "which is the odd one out (unpaired integer)" do
-    assert Codewars.find([1,2,3,4,5,6,1,2,3,4,5]) == 6
+    assert Codewars.find([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5]) == 6
   end
 
   test "odd one out paired once" do
-    assert Codewars.find([1,2,3,4,5,6,1,2,3,4,5,6,6]) == 6
+    assert Codewars.find([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 6]) == 6
   end
 
   test "remove vowels from the sentence" do
@@ -94,5 +94,21 @@ defmodule CodewarsTest do
 
   test "high positive and low negative" do
     assert Codewars.high_and_low("4 5 29 54 4 0 -214 542") == "542 -214"
+  end
+
+  test "not a square" do
+    assert Codewars.square?(26) == false
+  end
+
+  test "a square" do
+    assert Codewars.square?(25) == true
+  end
+
+  test "Welcome is reversed" do
+    assert Codewars.spin_words("Welcome") == "emocleW"
+  end
+
+  test "First word is not reversed" do
+    assert Codewars.spin_words("Hey fellow warriors") == "Hey wollef sroirraw"
   end
 end
