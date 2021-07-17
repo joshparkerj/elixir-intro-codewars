@@ -87,4 +87,12 @@ defmodule CodewarsTest do
   test "digital root 4 digits" do
     assert Codewars.digital_root(2345) == 5
   end
+
+  test "returns a number's opposite" do
+    assert Codewars.opposite(1) === -1
+  end
+
+  test "high positive and low negative" do
+    assert Codewars.high_and_low("4 5 29 54 4 0 -214 542") == "542 -214"
+  end
 end

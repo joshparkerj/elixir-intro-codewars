@@ -79,4 +79,32 @@ defmodule Codewars do
   # TODO: try solving this using Enum.sum
   def digital_root(n) when n < 10, do: n
   def digital_root(n), do: (digital_root(div(n, 10)) + rem(n, 10)) |> digital_root()
+
+  @doc """
+  Opposite number
+  """
+  def opposite(number) do
+    -number
+  end
+
+  @doc """
+  Highest and Lowest
+  """
+  #TODO: try solving this using Enum.min_max
+  def high_and_low(s) do
+    nums = String.split(s) |> Enum.map(&String.to_integer/1)
+
+    first = hd(nums)
+
+    high_low =
+      Enum.reduce(nums, %{:high => first, :low => first}, fn e, acc ->
+        cond do
+          e < acc.low -> %{acc | :low => e}
+          e > acc.high -> %{acc | :high => e}
+          true -> acc
+        end
+      end)
+
+    "#{high_low.high} #{high_low.low}"
+  end
 end
