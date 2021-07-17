@@ -126,6 +126,7 @@ defmodule Codewars do
   Stop gninnipS My sdroW!
   """
   # TODO: try solving this using Regex.replace with replacement function
+  # TODO: try solving this using Enum.map_join instead of map followed by join
   def spin_words(message) do
     String.split(message)
     |> Enum.map(fn word ->
@@ -137,4 +138,17 @@ defmodule Codewars do
     end)
     |> Enum.join(" ")
   end
+
+  @doc """
+  Descending Order
+  """
+  # TODO: try solving this using Integer.undigits
+  # TODO: try solving this by passing a captured operator to Enum.sort
+  def descending_order(n),
+    do:
+      n
+      |> Integer.digits()
+      |> Enum.sort()
+      |> Enum.reverse()
+      |> Enum.reduce(fn e, acc -> 10 * acc + e end)
 end

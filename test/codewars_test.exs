@@ -111,4 +111,16 @@ defmodule CodewarsTest do
   test "First word is not reversed" do
     assert Codewars.spin_words("Hey fellow warriors") == "Hey wollef sroirraw"
   end
+
+  test "descending order five digits" do
+    assert Codewars.descending_order(42145) == 54421
+  end
+
+  test "descending order six digits" do
+    assert Codewars.descending_order(145263) == 654321
+  end
+
+  test "descending order nine digits" do
+    assert Codewars.descending_order(123456789) == 987654321
+  end
 end
